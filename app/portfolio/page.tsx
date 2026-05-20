@@ -14,8 +14,8 @@ export default function PortfolioPage() {
         <div className="container-premium">
           <SectionHeading
             eyebrow="Portfolio"
-            title="Creative work made to stop the scroll and build trust."
-            description="A premium showcase of design directions for creators, businesses, brands, gaming channels, and digital campaigns."
+            title="Design work and web experiences built for modern clients."
+            description="Switch between creative design projects and web solution previews, including thumbnails, branding, landing pages, portfolio sites, and SaaS-style interfaces."
             align="center"
           />
           <div className="mt-12">

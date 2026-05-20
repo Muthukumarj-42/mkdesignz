@@ -17,10 +17,10 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow">About MK DESINGZ</p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-ink md:text-6xl">
-              A creative partner for brands that want to look credible everywhere.
+              A creative and web partner for brands that want to look credible everywhere.
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted">
-              MK DESINGZ was built around a simple idea: strong visuals should make people pause, understand, and trust faster. The work blends design taste, content strategy, and practical delivery for creators, businesses, agencies, and startups.
+              MK DESINGZ was built around a simple idea: strong visuals and polished websites should make people pause, understand, and trust faster. The work blends design taste, content strategy, web structure, and practical delivery for creators, businesses, agencies, and startups.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="relative">

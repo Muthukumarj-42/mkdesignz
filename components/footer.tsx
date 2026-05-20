@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-6 md:grid-cols-[1.3fr_0.8fr_0.8fr] lg:px-8">
         <div>
           <Link href="/" className="flex items-center gap-3">
-            <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+            <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-ink bg-ink shadow-soft">
               <Image src="/logo.png" alt="MK DESINGZ logo" width={42} height={42} className="object-contain" />
             </span>
             <span>

@@ -27,12 +27,16 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="MK DESINGZ home">
-          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-            <Image src="/logo.png" alt="MK DESINGZ logo" width={38} height={38} className="object-contain" />
+          <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-ink bg-ink shadow-soft">
+            <Image src="/logo.png" alt="MK DESINGZ logo" width={42} height={42} className="object-contain" />
           </span>
-          <span className="leading-none">
-            <span className="block text-sm font-bold tracking-[0.18em] text-ink">MK</span>
-            <span className="block text-xs font-semibold uppercase tracking-[0.24em] text-muted">DESINGZ</span>
+          <span className="min-w-0 leading-none">
+            <span className="block whitespace-nowrap text-base font-extrabold tracking-[0.12em] text-ink sm:text-lg">
+              MK DESINGZ
+            </span>
+            <span className="mt-1 hidden text-[11px] font-bold uppercase tracking-[0.22em] text-muted sm:block">
+              Creative + Web
+            </span>
           </span>
         </Link>
 
