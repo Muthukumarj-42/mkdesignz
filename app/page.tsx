@@ -13,10 +13,10 @@ import { counters, designMatters, heroStats, reasons, valueProps } from "@/lib/d
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-28 lg:pt-20">
+      <section className="relative overflow-hidden px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-16">
         <div className="creative-grid absolute inset-x-0 top-0 h-[520px] sm:h-[620px]" />
-        <div className="container-premium relative grid items-center gap-10 sm:gap-14 lg:grid-cols-[1fr_0.92fr]">
-          <div>
+        <div className="container-premium relative grid min-h-[calc(100vh-6rem)] items-center gap-10 sm:gap-14 lg:grid-cols-[1fr_0.92fr] lg:py-8">
+          <div className="mx-auto w-full max-w-2xl lg:mx-0">
             <MotionDiv
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function Home() {
               </div>
             </MotionDiv>
 
-            <div className="mt-7 flex flex-wrap gap-2.5 sm:mt-10 sm:gap-3">
+            <div className="mt-7 flex flex-wrap gap-2.5 sm:mt-9 sm:gap-3">
               {heroStats.map((stat) => (
                 <span key={stat} className="chip">
                   {stat}
@@ -49,12 +49,12 @@ export default function Home() {
           </div>
 
           <MotionDiv
-            className="relative"
+            className="relative mx-auto w-full max-w-xl lg:mx-0 lg:justify-self-end"
             initial={{ opacity: 0, scale: 0.96, y: 24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="soft-gradient absolute -inset-5 rounded-[2.5rem]" />
+            <div className="soft-gradient absolute -inset-4 rounded-[2.5rem] sm:-inset-5" />
             <div className="relative overflow-hidden rounded-[1.5rem] border border-line bg-white p-2.5 shadow-premium sm:rounded-[2rem] sm:p-4">
               <div className="relative min-h-[390px] overflow-hidden rounded-[1.25rem] bg-ink p-4 text-white sm:min-h-[460px] sm:rounded-[1.5rem] sm:p-6">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(35,184,212,0.26),transparent_24rem),radial-gradient(circle_at_82%_10%,rgba(91,53,213,0.24),transparent_22rem)]" />

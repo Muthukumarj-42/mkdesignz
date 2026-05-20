@@ -56,19 +56,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-ink text-white">
+      <section className="section-padding bg-white">
         <div className="container-premium">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-cyan">Journey</p>
-            <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-white md:text-6xl">
+            <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-royal">Journey</p>
+            <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-ink md:text-6xl">
               A roadmap from learning design to building digital brands.
             </h2>
-            <p className="mt-6 text-lg leading-9 text-white/65">
+            <p className="mt-6 text-lg leading-9 text-muted">
               The MK Designz journey has moved through design practice, creator work, freelancing, web development, and brand building.
             </p>
           </Reveal>
           <div className="relative mt-16">
-            <div className="absolute left-5 top-0 h-full w-px bg-gradient-to-b from-cyan via-white/30 to-purple lg:left-1/2" />
+            <div className="absolute left-5 top-0 h-full w-px bg-gradient-to-b from-cyan via-line to-purple lg:left-1/2" />
             <div className="grid gap-8">
               {timeline.map((item, index) => (
                 <Reveal
@@ -76,11 +76,11 @@ export default function AboutPage() {
                   delay={index * 0.05}
                   className={`relative grid gap-5 lg:grid-cols-2 ${index % 2 === 0 ? "" : "lg:[&>div]:col-start-2"}`}
                 >
-                  <div className="ml-12 rounded-[1.5rem] border border-white/10 bg-white/[0.05] p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:bg-white/[0.08] lg:ml-0">
-                    <span className="absolute left-3 top-7 h-4 w-4 rounded-full border-4 border-ink bg-cyan lg:left-1/2 lg:-translate-x-1/2" />
-                    <p className="text-sm font-extrabold text-cyan">{item.year}</p>
-                    <h3 className="mt-2 text-2xl font-extrabold tracking-tight">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/68">{item.description}</p>
+                  <div className="ml-12 rounded-[1.5rem] border border-line bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-premium lg:ml-0">
+                    <span className="absolute left-3 top-7 h-4 w-4 rounded-full border-4 border-white bg-cyan shadow-soft lg:left-1/2 lg:-translate-x-1/2" />
+                    <p className="text-sm font-extrabold text-royal">{item.year}</p>
+                    <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-ink">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
                   </div>
                 </Reveal>
               ))}

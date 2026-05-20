@@ -1,7 +1,6 @@
 import { CtaBand } from "@/components/cta-band";
 import { ServiceShowcase } from "@/components/service-showcase";
 import { SectionHeading } from "@/components/section-heading";
-import { webPricing } from "@/lib/data";
 
 export const metadata = {
   title: "Services",
@@ -21,13 +20,6 @@ export default function ServicesPage() {
           />
           <div className="mt-14">
             <ServiceShowcase />
-          </div>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            {webPricing.map((price) => (
-              <div key={price} className="rounded-[1.25rem] border border-line bg-white p-5 text-center text-sm font-extrabold text-ink shadow-sm">
-                {price}
-              </div>
-            ))}
           </div>
         </div>
       </section>

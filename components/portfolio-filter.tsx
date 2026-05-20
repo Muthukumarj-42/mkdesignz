@@ -73,7 +73,7 @@ export function PortfolioFilter() {
         ))}
       </div>
 
-      <MotionDiv layout className="grid auto-rows-[350px] gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[320px]">
+      <MotionDiv layout className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <MotionDiv
             layout
@@ -81,51 +81,57 @@ export function PortfolioFilter() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
-            className={`group relative overflow-hidden rounded-[1.35rem] border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-premium sm:rounded-[1.5rem] ${"span" in item ? item.span : ""}`}
+            className="group flex min-h-[420px] flex-col overflow-hidden rounded-[1.35rem] border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-premium sm:rounded-[1.5rem]"
           >
             {"youtubeId" in item ? (
               <button
                 type="button"
                 onClick={() => setVideoId(item.youtubeId)}
-                className="absolute inset-0 text-left"
+                className="flex h-full flex-col text-left"
               >
-                <Image
-                  src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
-                  alt={item.title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/86 via-ink/18 to-transparent" />
-                <span className="absolute left-5 top-5 flex h-14 w-14 items-center justify-center rounded-full bg-white text-ink shadow-soft transition group-hover:scale-110">
-                  <Play size={22} fill="currentColor" />
-                </span>
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan">{item.category}</p>
-                  <h3 className="mt-2 text-2xl font-extrabold">{item.title}</h3>
-                  <p className="mt-2 text-base leading-7 text-white/75 sm:text-sm sm:leading-6">{item.summary}</p>
+                <div className="relative aspect-video overflow-hidden bg-ink">
+                  <Image
+                    src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-ink/20" />
+                  <span className="absolute left-5 top-5 flex h-14 w-14 items-center justify-center rounded-full bg-white text-ink shadow-soft transition group-hover:scale-110">
+                    <Play size={22} fill="currentColor" />
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-royal">{item.category}</p>
+                  <h3 className="mt-2 text-2xl font-extrabold text-ink">{item.title}</h3>
+                  <p className="mt-2 text-base leading-7 text-muted sm:text-sm sm:leading-6">{item.summary}</p>
+                  <span className="mt-auto inline-flex min-h-11 items-center gap-2 pt-5 text-sm font-extrabold text-royal">
+                    Watch preview <Play size={15} fill="currentColor" />
+                  </span>
                 </div>
               </button>
             ) : "image" in item ? (
               <>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/78 via-ink/10 to-transparent opacity-90" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan">{item.category}</p>
-                  <h3 className="mt-2 text-2xl font-extrabold sm:text-xl">{item.title}</h3>
-                  <p className="mt-2 text-base leading-7 text-white/75 sm:text-sm sm:leading-6">{item.summary}</p>
+                <div className="relative aspect-[16/10] overflow-hidden bg-surface">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-contain p-2 transition duration-700 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-royal">{item.category}</p>
+                  <h3 className="mt-2 text-2xl font-extrabold text-ink sm:text-xl">{item.title}</h3>
+                  <p className="mt-2 text-base leading-7 text-muted sm:text-sm sm:leading-6">{item.summary}</p>
                   {"url" in item ? (
                     <a
                       href={item.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-ink transition hover:-translate-y-0.5"
+                      className="mt-auto inline-flex min-h-11 items-center gap-2 pt-5 text-sm font-extrabold text-royal transition hover:text-ink"
                     >
                       {item.action} <ExternalLink size={14} />
                     </a>
@@ -133,24 +139,24 @@ export function PortfolioFilter() {
                 </div>
               </>
             ) : (
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.accent} p-3 sm:p-5`}>
-                <div className="flex h-full flex-col justify-between rounded-[1.2rem] border border-white/70 bg-white/88 p-4 shadow-soft sm:p-5">
+              <div className={`flex h-full flex-col bg-gradient-to-br ${item.accent} p-3 sm:p-5`}>
+                <div className="flex h-full flex-col rounded-[1.2rem] border border-white/70 bg-white/92 p-4 shadow-soft sm:p-5">
                   <div className="rounded-2xl border border-line bg-ink p-2 shadow-soft">
                     <div className="mb-2 flex gap-1.5">
                       <span className="h-2.5 w-2.5 rounded-full bg-cyan" />
                       <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
                       <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
                     </div>
-                    <div className="relative h-32 overflow-hidden rounded-xl bg-white transition duration-500 group-hover:scale-[1.03] sm:h-28">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-white transition duration-500 group-hover:scale-[1.02]">
                       <iframe
                         src={item.url}
                         title={`${item.title} website preview`}
-                        className="pointer-events-none h-[520px] w-[900px] origin-top-left scale-[0.16] border-0 sm:h-[420px] sm:w-[720px] sm:scale-[0.18]"
+                        className="pointer-events-none absolute left-0 top-0 h-[455%] w-[455%] origin-top-left scale-[0.22] border-0 sm:h-[500%] sm:w-[500%] sm:scale-[0.2] lg:h-[555%] lg:w-[555%] lg:scale-[0.18]"
                         loading="lazy"
                       />
                     </div>
                   </div>
-                  <div>
+                  <div className="mt-5 flex flex-1 flex-col">
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-royal">{item.category}</p>
                     <h3 className="mt-2 text-2xl font-extrabold text-ink sm:text-xl">{item.title}</h3>
                     <p className="mt-2 text-base leading-7 text-muted sm:text-sm sm:leading-6">{item.summary}</p>
@@ -165,7 +171,7 @@ export function PortfolioFilter() {
                       href={item.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-4 py-2 text-xs font-extrabold text-white transition hover:-translate-y-0.5"
+                      className="mt-auto inline-flex min-h-11 items-center gap-2 pt-5 text-sm font-extrabold text-royal transition hover:text-ink"
                     >
                       Visit Website <ExternalLink size={14} />
                     </a>

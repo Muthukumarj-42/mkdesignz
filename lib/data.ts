@@ -3,7 +3,6 @@ import {
   BarChart3,
   Blocks,
   BriefcaseBusiness,
-  Brush,
   Clapperboard,
   Clock3,
   Code2,
@@ -20,7 +19,6 @@ import {
   PenTool,
   PlaySquare,
   Rocket,
-  Search,
   Share2,
   ShieldCheck,
   Sparkles,
@@ -43,13 +41,13 @@ export const showcaseTabs = [
     id: "design",
     label: "Design Services",
     shortLabel: "Design",
-    description: "Branding, thumbnails, editing, motion, and social creative."
+    description: "Thumbnails, branding, editing, overlays, motion, and social creative."
   },
   {
     id: "web",
     label: "Web Solutions",
     shortLabel: "Web",
-    description: "Premium websites, landing pages, UI builds, and responsive experiences."
+    description: "Landing pages, portfolios, business websites, React builds, and SaaS websites."
   }
 ] as const;
 
@@ -58,31 +56,10 @@ export type ShowcaseType = (typeof showcaseTabs)[number]["id"];
 export const services = [
   {
     type: "design",
-    title: "Graphic Design",
-    description: "Premium posters, ads, banners, and visual assets built for campaigns.",
-    price: "₹299",
-    icon: Brush
-  },
-  {
-    type: "design",
     title: "Thumbnail Design",
     description: "High-click YouTube thumbnails with strong hierarchy and scroll-stopping hooks.",
     price: "₹179",
     icon: PlaySquare
-  },
-  {
-    type: "design",
-    title: "Video Editing",
-    description: "Clean edits, pacing, transitions, titles, and creator-friendly storytelling.",
-    price: "₹499+",
-    icon: Film
-  },
-  {
-    type: "design",
-    title: "Shorts Editing",
-    description: "Fast vertical edits with captions, cuts, sound design, and retention flow.",
-    price: "₹249",
-    icon: Clapperboard
   },
   {
     type: "design",
@@ -93,24 +70,24 @@ export const services = [
   },
   {
     type: "design",
-    title: "Banner Design",
-    description: "Clean channel banners, stream banners, and promotional headers.",
+    title: "Shorts Editing",
+    description: "Fast vertical edits with captions, cuts, sound design, and retention flow.",
+    price: "₹249",
+    icon: Clapperboard
+  },
+  {
+    type: "design",
+    title: "Video Editing",
+    description: "Clean edits, pacing, transitions, titles, and creator-friendly storytelling.",
+    price: "₹499+",
+    icon: Film
+  },
+  {
+    type: "design",
+    title: "Overlays",
+    description: "Clean stream overlays, creator packs, branded frames, and banner-ready visuals.",
     price: "₹299",
     icon: LayoutTemplate
-  },
-  {
-    type: "design",
-    title: "Social Media Design",
-    description: "Carousels, posts, stories, and promotional creatives for consistent growth.",
-    price: "₹399",
-    icon: Share2
-  },
-  {
-    type: "design",
-    title: "YouTube SEO",
-    description: "Titles, descriptions, tags, metadata, and upload strategy for discoverability.",
-    price: "₹799",
-    icon: Search
   },
   {
     type: "design",
@@ -118,6 +95,13 @@ export const services = [
     description: "Intros, titles, lower thirds, kinetic text, and polished animated elements.",
     price: "₹1,999",
     icon: Sparkles
+  },
+  {
+    type: "design",
+    title: "Social Media Design",
+    description: "Carousels, posts, stories, and promotional creatives for consistent growth.",
+    price: "₹399",
+    icon: Share2
   },
   {
     type: "web",
@@ -142,10 +126,10 @@ export const services = [
   },
   {
     type: "web",
-    title: "UI/UX Development",
-    description: "Figma-to-frontend builds with clean layouts, components, and responsive states.",
-    price: "₹3,999",
-    icon: LayoutTemplate
+    title: "Responsive Websites",
+    description: "Mobile-first websites that feel polished across phones, tablets, and desktops.",
+    price: "₹4,999",
+    icon: MonitorSmartphone
   },
   {
     type: "web",
@@ -156,14 +140,7 @@ export const services = [
   },
   {
     type: "web",
-    title: "Responsive Websites",
-    description: "Mobile-first websites that feel polished across phones, tablets, and desktops.",
-    price: "₹4,999",
-    icon: MonitorSmartphone
-  },
-  {
-    type: "web",
-    title: "Modern SaaS Websites",
+    title: "SaaS Websites",
     description: "Premium SaaS-style marketing pages with structured sections and clean CTAs.",
     price: "₹9,999",
     icon: Blocks
@@ -176,15 +153,20 @@ export const designPortfolioItems = [
     title: "Gaming Thumbnail System",
     category: "Thumbnails",
     image: "/portfolio/mapla-gaming.jpg",
-    span: "lg:row-span-2",
     summary: "High-impact creator thumbnail direction."
+  },
+  {
+    type: "design",
+    title: "Creator Promo Visual",
+    category: "Thumbnails",
+    image: "/portfolio/poona-kutty.jpg",
+    summary: "Attention-led YouTube visual system."
   },
   {
     type: "design",
     title: "Fashion Campaign Creative",
     category: "Social Media",
     image: "/portfolio/i-fashion.jpg",
-    span: "",
     summary: "Campaign-ready visual for product promotion."
   },
   {
@@ -192,45 +174,18 @@ export const designPortfolioItems = [
     title: "SSG Brand Identity",
     category: "Branding",
     image: "/portfolio/ssg-logo.jpg",
-    span: "",
     summary: "Clean brand asset for local business identity."
   },
   {
     type: "design",
-    title: "Creator Promo Visual",
-    category: "Thumbnails",
-    image: "/portfolio/poona-kutty.jpg",
-    span: "lg:row-span-2",
-    summary: "Attention-led YouTube visual system."
-  },
-  {
-    type: "design",
     title: "Video Overlay Pack",
-    category: "Motion Graphics",
+    category: "Overlays & Banners",
     image: "/portfolio/overlay-dsgt.png",
-    span: "",
     summary: "Creator overlay and gaming stream visual."
-  },
-  {
-    type: "design",
-    title: "UI Style Exploration",
-    category: "UI Design",
-    image: "/portfolio/water-quality.jpg",
-    span: "",
-    summary: "Minimal visual exploration for a digital product."
   }
 ] as const;
 
 export const webPortfolioItems = [
-  {
-    type: "web",
-    title: "Muthukumar Portfolio",
-    category: "Portfolio Websites",
-    stack: ["Next.js", "Tailwind", "Framer Motion"],
-    accent: "from-royal/16 via-cyan/10 to-purple/12",
-    summary: "A modern personal portfolio with clean sections, proof-led layout, and smooth motion.",
-    url: "https://muthukumarj-portfolio.vercel.app/"
-  },
   {
     type: "web",
     title: "SS International Group",
@@ -239,6 +194,15 @@ export const webPortfolioItems = [
     accent: "from-cyan/16 via-white to-royal/10",
     summary: "A business website experience for real estate, finance, builders, and global services.",
     url: "https://www.ssingroup.com/"
+  },
+  {
+    type: "web",
+    title: "Muthukumar Portfolio",
+    category: "Portfolio Websites",
+    stack: ["Next.js", "Tailwind", "Framer Motion"],
+    accent: "from-royal/16 via-cyan/10 to-purple/12",
+    summary: "A modern personal portfolio with clean sections, proof-led layout, and smooth motion.",
+    url: "https://muthukumarj-portfolio.vercel.app/"
   },
   {
     type: "web",
@@ -252,7 +216,7 @@ export const webPortfolioItems = [
   {
     type: "web",
     title: "Iron Vault Fitness",
-    category: "Modern SaaS Websites",
+    category: "SaaS Websites",
     stack: ["Fitness Website", "UI System", "Motion"],
     accent: "from-ink/10 via-white to-royal/12",
     summary: "A modern fitness website concept with strong hero hierarchy and premium layout rhythm.",
@@ -263,8 +227,8 @@ export const webPortfolioItems = [
 export const portfolioItems = [...designPortfolioItems, ...webPortfolioItems] as const;
 
 export const portfolioCategories = {
-  design: ["All", "Thumbnails", "Branding", "Video Editing", "Shorts", "Overlays & Banners", "Social Media", "Motion Graphics"],
-  web: ["All", "Landing Pages", "Portfolio Websites", "Business Websites", "Modern SaaS Websites"]
+  design: ["All", "Thumbnails", "Branding", "Video Editing", "Shorts", "Overlays & Banners", "Social Media"],
+  web: ["All", "Business Websites", "Portfolio Websites", "Landing Pages", "SaaS Websites"]
 };
 
 export const designMediaProjects = [
@@ -426,7 +390,7 @@ export const pricingPlans = [
     name: "Creator Pack",
     price: "₹499+",
     description: "For creators who need edits, banners, thumbnails, or social assets.",
-    features: ["Video editing from ₹499", "Shorts editing ₹249", "Banner design ₹299", "Bulk discounts available"],
+    features: ["Video editing from ₹499", "Shorts editing ₹249", "Overlays from ₹299", "Bulk discounts available"],
     cta: "Choose Creator",
     featured: true
   },
@@ -471,15 +435,7 @@ export const pricingPlans = [
     features: ["Business pages", "Service structure", "Responsive design", "Domain charges extra"],
     cta: "Build business site"
   }
-];
-
-export const webPricing = [
-  "Simple Landing Page - ₹1,999",
-  "Advanced Landing Page - ₹2,999",
-  "Portfolio Website - ₹4,999",
-  "Business Website - ₹9,999",
-  "Domain not included - domain charges extra"
-];
+] as const;
 
 export const timeline = [
   {
@@ -547,12 +503,7 @@ export const socialLinks = [
   { label: "Email", href: "mailto:mkdesingz@example.com" }
 ];
 
-export const heroStats = [
-  "Branding",
-  "Editing",
-  "Thumbnails",
-  "Websites"
-];
+export const heroStats = ["Branding", "Editing", "Thumbnails", "Websites"];
 
 export const valueProps = [
   { title: "Design clarity", icon: PenTool },
