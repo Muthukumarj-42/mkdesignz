@@ -56,31 +56,32 @@ export default function Home() {
           >
             <div className="soft-gradient absolute -inset-4 rounded-[2.5rem] sm:-inset-5" />
             <div className="relative overflow-hidden rounded-[1.5rem] border border-line bg-white p-2.5 shadow-premium sm:rounded-[2rem] sm:p-4">
-              <div className="relative min-h-[390px] overflow-hidden rounded-[1.25rem] bg-ink p-4 text-white sm:min-h-[460px] sm:rounded-[1.5rem] sm:p-6">
+              <div className="relative overflow-hidden rounded-[1.25rem] bg-ink p-4 text-white sm:rounded-[1.5rem] sm:p-6">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(35,184,212,0.26),transparent_24rem),radial-gradient(circle_at_82%_10%,rgba(91,53,213,0.24),transparent_22rem)]" />
-                <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-white/10 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/80 sm:left-6 sm:top-6 sm:px-4 sm:text-xs">
-                  MK Designz Studio
-                </div>
-                <div className="absolute left-1/2 top-16 flex h-32 w-32 -translate-x-1/2 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)] sm:top-20 sm:h-40 sm:w-40">
-                  <div className="relative h-24 w-24 overflow-hidden rounded-full bg-ink sm:h-28 sm:w-28">
-                    <Image src="/logo.png" alt="MK DESINGZ brand showcase" fill priority className="object-contain p-3" />
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-2.5 sm:bottom-6 sm:left-6 sm:right-6 sm:gap-3">
-                  {valueProps.map((item, index) => (
-                    <div
-                      key={item.title}
-                      className={`rounded-2xl border border-white/10 bg-white p-3 text-ink shadow-soft transition duration-300 hover:-translate-y-1 sm:p-4 ${
-                        index === 0 ? "sm:col-span-2" : ""
-                      }`}
-                    >
-                      <item.icon size={19} className="text-royal" />
-                      <p className="mt-2 text-[11px] font-extrabold leading-4 text-ink sm:mt-3 sm:text-xs sm:leading-5">{item.title}</p>
+                <div className="relative z-10 flex min-h-[410px] flex-col items-center justify-between gap-6 py-5 sm:min-h-[460px] sm:py-7">
+                  <div className="flex flex-1 items-center justify-center">
+                    <div className="flex h-44 w-44 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)] sm:h-56 sm:w-56">
+                      <div className="relative h-36 w-36 overflow-hidden rounded-full bg-ink sm:h-44 sm:w-44">
+                        <Image src="/logo.png" alt="MK DESINGZ brand showcase" fill priority className="object-contain p-3" />
+                      </div>
                     </div>
-                  ))}
-                </div>
-                <div className="absolute right-8 top-1/2 hidden w-44 -translate-y-1/2 rounded-2xl border border-white/10 bg-white/10 p-4 text-sm font-bold text-white/80 backdrop-blur sm:block">
-                  Branding, websites, thumbnails, and creator content under one clean visual system.
+                  </div>
+
+                  <div className="w-full rounded-[1.35rem] border border-white/10 bg-white p-3 text-ink shadow-soft sm:p-4">
+                    <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3">
+                      {valueProps.map((item) => (
+                        <div
+                          key={item.title}
+                          className="flex min-h-20 items-center gap-3 rounded-2xl border border-line bg-surface p-3 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-soft"
+                        >
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-royal/10 text-royal">
+                            <item.icon size={18} />
+                          </span>
+                          <p className="text-xs font-extrabold leading-4 text-ink">{item.title}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
