@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-        <main className="min-h-screen pt-20">{children}</main>
+        <main className="min-h-screen pt-16 sm:pt-20">{children}</main>
         <Footer />
         <FloatingWhatsapp />
       </body>

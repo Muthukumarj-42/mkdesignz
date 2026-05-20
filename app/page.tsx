@@ -13,9 +13,9 @@ import { counters, designMatters, heroStats, reasons, valueProps } from "@/lib/d
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-5 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-20">
-        <div className="creative-grid absolute inset-x-0 top-0 h-[620px]" />
-        <div className="container-premium relative grid items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
+      <section className="relative overflow-hidden px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-28 lg:pt-20">
+        <div className="creative-grid absolute inset-x-0 top-0 h-[520px] sm:h-[620px]" />
+        <div className="container-premium relative grid items-center gap-10 sm:gap-14 lg:grid-cols-[1fr_0.92fr]">
           <div>
             <MotionDiv
               initial={{ opacity: 0, y: 24 }}
@@ -23,23 +23,23 @@ export default function Home() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
               <p className="eyebrow">Creative design + web development</p>
-              <h1 className="mt-5 max-w-4xl text-5xl font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl">
+              <h1 className="mt-4 max-w-4xl text-[clamp(2.85rem,13vw,5rem)] font-extrabold leading-[0.98] tracking-tight text-ink lg:text-7xl">
                 Designs That Build Attention
               </h1>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-muted md:text-xl md:leading-9">
+              <p className="mt-5 max-w-2xl text-[clamp(1.02rem,4.2vw,1.25rem)] leading-8 text-muted md:leading-9">
                 Helping creators, businesses, and brands grow with modern design, editing, branding, websites, and digital content solutions.
               </p>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Link href="/portfolio" className="btn-primary gap-2">
+              <div className="mt-8 grid gap-3 sm:flex sm:flex-row">
+                <Link href="/portfolio" className="btn-primary w-full gap-2 sm:w-auto">
                   View Portfolio <ArrowRight size={18} />
                 </Link>
-                <Link href="/contact" className="btn-secondary">
+                <Link href="/contact" className="btn-secondary w-full sm:w-auto">
                   Hire Me
                 </Link>
               </div>
             </MotionDiv>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-2.5 sm:mt-10 sm:gap-3">
               {heroStats.map((stat) => (
                 <span key={stat} className="chip">
                   {stat}
@@ -55,27 +55,27 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="soft-gradient absolute -inset-5 rounded-[2.5rem]" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-line bg-white p-4 shadow-premium">
-              <div className="relative min-h-[460px] overflow-hidden rounded-[1.5rem] bg-ink p-6 text-white">
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-line bg-white p-2.5 shadow-premium sm:rounded-[2rem] sm:p-4">
+              <div className="relative min-h-[390px] overflow-hidden rounded-[1.25rem] bg-ink p-4 text-white sm:min-h-[460px] sm:rounded-[1.5rem] sm:p-6">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(35,184,212,0.26),transparent_24rem),radial-gradient(circle_at_82%_10%,rgba(91,53,213,0.24),transparent_22rem)]" />
-                <div className="absolute left-6 top-6 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-white/80">
+                <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-white/10 px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/80 sm:left-6 sm:top-6 sm:px-4 sm:text-xs">
                   MK Designz Studio
                 </div>
-                <div className="absolute left-1/2 top-20 flex h-40 w-40 -translate-x-1/2 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)]">
-                  <div className="relative h-28 w-28 overflow-hidden rounded-full bg-ink">
+                <div className="absolute left-1/2 top-16 flex h-32 w-32 -translate-x-1/2 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)] sm:top-20 sm:h-40 sm:w-40">
+                  <div className="relative h-24 w-24 overflow-hidden rounded-full bg-ink sm:h-28 sm:w-28">
                     <Image src="/logo.png" alt="MK DESINGZ brand showcase" fill priority className="object-contain p-3" />
                   </div>
                 </div>
-                <div className="absolute bottom-6 left-6 right-6 grid gap-3 sm:grid-cols-2">
+                <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-2.5 sm:bottom-6 sm:left-6 sm:right-6 sm:gap-3">
                   {valueProps.map((item, index) => (
                     <div
                       key={item.title}
-                      className={`rounded-2xl border border-white/10 bg-white p-4 text-ink shadow-soft transition duration-300 hover:-translate-y-1 ${
+                      className={`rounded-2xl border border-white/10 bg-white p-3 text-ink shadow-soft transition duration-300 hover:-translate-y-1 sm:p-4 ${
                         index === 0 ? "sm:col-span-2" : ""
                       }`}
                     >
-                      <item.icon size={20} className="text-royal" />
-                      <p className="mt-3 text-xs font-extrabold leading-5 text-ink">{item.title}</p>
+                      <item.icon size={19} className="text-royal" />
+                      <p className="mt-2 text-[11px] font-extrabold leading-4 text-ink sm:mt-3 sm:text-xs sm:leading-5">{item.title}</p>
                     </div>
                   ))}
                 </div>
@@ -96,14 +96,14 @@ export default function Home() {
             description="Great design is more than decoration. It builds confidence, creates recognition, improves performance, and makes every client touchpoint feel intentional."
             align="center"
           />
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {designMatters.map((item, index) => (
-              <Reveal key={item.title} delay={index * 0.04} className="card-premium p-6">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-royal/10 text-royal">
-                  <item.icon size={23} />
+              <Reveal key={item.title} delay={index * 0.04} className="card-premium p-5 sm:p-6">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-royal/10 text-royal">
+                  <item.icon size={25} />
                 </span>
-                <h3 className="mt-6 text-lg font-extrabold tracking-tight text-ink">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
+                <h3 className="mt-5 text-xl font-extrabold tracking-tight text-ink sm:mt-6">{item.title}</h3>
+                <p className="mt-3 text-base leading-7 text-muted">{item.description}</p>
               </Reveal>
             ))}
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
             description="Switch between design services and web solutions. Each offer is built to help your brand look sharper, feel more credible, and convert better."
             align="center"
           />
-          <div className="mt-14">
+          <div className="mt-10 sm:mt-14">
             <ServiceShowcase compact />
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function Home() {
             description="A clean showcase across thumbnails, branding, creator visuals, motion-led assets, UI direction, and social content."
             align="center"
           />
-          <div className="mt-12">
+          <div className="mt-10 sm:mt-12">
             <PortfolioFilter />
           </div>
         </div>

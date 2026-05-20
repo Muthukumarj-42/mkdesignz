@@ -35,15 +35,15 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="card-premium p-5 sm:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-bold text-ink">
+        <label className="grid gap-2 text-base font-extrabold text-ink sm:text-sm">
           Name
           <input name="name" required className="field" placeholder="Your name" />
         </label>
-        <label className="grid gap-2 text-sm font-bold text-ink">
+        <label className="grid gap-2 text-base font-extrabold text-ink sm:text-sm">
           Email
           <input name="email" type="email" required className="field" placeholder="you@example.com" />
         </label>
-        <label className="grid gap-2 text-sm font-bold text-ink">
+        <label className="grid gap-2 text-base font-extrabold text-ink sm:text-sm">
           Main selection
           <select
             name="mainService"
@@ -56,7 +56,7 @@ export function ContactForm() {
             <option>Web Development</option>
           </select>
         </label>
-        <label className="grid gap-2 text-sm font-bold text-ink">
+        <label className="grid gap-2 text-base font-extrabold text-ink sm:text-sm">
           Related service
           <select name="service" required className="field">
             {serviceTypes[mainType].map((service) => (
@@ -64,7 +64,7 @@ export function ContactForm() {
             ))}
           </select>
         </label>
-        <label className="grid gap-2 text-sm font-bold text-ink">
+        <label className="grid gap-2 text-base font-extrabold text-ink sm:text-sm">
           Budget
           <select name="budget" required className="field">
             <option value="">Select budget</option>
@@ -75,7 +75,7 @@ export function ContactForm() {
             <option>₹10,000+</option>
           </select>
         </label>
-        <label className="grid gap-2 text-sm font-bold text-ink">
+        <label className="grid gap-2 text-base font-extrabold text-ink sm:text-sm">
           Timeline
           <select name="timeline" required className="field">
             <option value="">Select timeline</option>
@@ -86,7 +86,7 @@ export function ContactForm() {
             <option>Flexible</option>
           </select>
         </label>
-        <label className="grid gap-2 text-sm font-bold text-ink sm:col-span-2">
+        <label className="grid gap-2 text-base font-extrabold text-ink sm:col-span-2 sm:text-sm">
           Project details
           <textarea
             name="details"
@@ -97,9 +97,11 @@ export function ContactForm() {
           />
         </label>
       </div>
-      <button type="submit" className="btn-primary mt-6 w-full gap-2 sm:w-auto">
+      <div className="sticky bottom-3 z-10 mt-6 rounded-full bg-white/80 p-1 backdrop-blur sm:static sm:bg-transparent sm:p-0">
+        <button type="submit" className="btn-primary w-full gap-2 sm:w-auto">
         Send to WhatsApp <Send size={17} />
-      </button>
+        </button>
+      </div>
       {status ? <p className="mt-4 text-sm font-semibold text-royal">{status}</p> : null}
     </form>
   );
