@@ -20,7 +20,7 @@ const contactCards = [
   {
     title: "Instagram",
     detail: "Send a project DM",
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/_mkdesignz_/",
     icon: Camera
   },
   {

@@ -27,7 +27,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="MK DESINGZ home">
-          <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-ink bg-ink shadow-soft">
+          <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-ink bg-ink shadow-[0_14px_36px_rgba(17,18,23,0.24)]">
             <Image src="/logo.png" alt="MK DESINGZ logo" width={42} height={42} className="object-contain" />
           </span>
           <span className="min-w-0 leading-none">

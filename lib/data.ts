@@ -60,36 +60,43 @@ export const services = [
     type: "design",
     title: "Graphic Design",
     description: "Premium posters, ads, banners, and visual assets built for campaigns.",
-    price: "₹499",
+    price: "₹299",
     icon: Brush
   },
   {
     type: "design",
     title: "Thumbnail Design",
     description: "High-click YouTube thumbnails with strong hierarchy and scroll-stopping hooks.",
-    price: "₹299",
+    price: "₹179",
     icon: PlaySquare
   },
   {
     type: "design",
     title: "Video Editing",
     description: "Clean edits, pacing, transitions, titles, and creator-friendly storytelling.",
-    price: "₹1,499",
+    price: "₹499+",
     icon: Film
   },
   {
     type: "design",
     title: "Shorts Editing",
     description: "Fast vertical edits with captions, cuts, sound design, and retention flow.",
-    price: "₹699",
+    price: "₹249",
     icon: Clapperboard
   },
   {
     type: "design",
     title: "Branding",
     description: "Logo direction, palettes, visual systems, and brand-ready launch kits.",
-    price: "₹2,999",
+    price: "₹1,499",
     icon: BadgeCheck
+  },
+  {
+    type: "design",
+    title: "Banner Design",
+    description: "Clean channel banners, stream banners, and promotional headers.",
+    price: "₹299",
+    icon: LayoutTemplate
   },
   {
     type: "design",
@@ -116,49 +123,49 @@ export const services = [
     type: "web",
     title: "Landing Pages",
     description: "Conversion-focused landing pages with strong copy hierarchy and premium UI.",
-    price: "₹4,999",
+    price: "₹1,999",
     icon: MousePointerClick
   },
   {
     type: "web",
     title: "Portfolio Websites",
     description: "Modern personal and creative portfolios built to show proof and win clients.",
-    price: "₹7,999",
+    price: "₹4,999",
     icon: BriefcaseBusiness
   },
   {
     type: "web",
     title: "Business Websites",
     description: "Trust-building websites for local brands, services, agencies, and startups.",
-    price: "₹14,999",
+    price: "₹9,999",
     icon: Globe2
   },
   {
     type: "web",
     title: "UI/UX Development",
     description: "Figma-to-frontend builds with clean layouts, components, and responsive states.",
-    price: "₹9,999",
+    price: "₹3,999",
     icon: LayoutTemplate
   },
   {
     type: "web",
     title: "React Websites",
     description: "Fast React and Next.js websites with reusable components and SEO-ready pages.",
-    price: "₹12,999",
+    price: "₹6,999",
     icon: Code2
   },
   {
     type: "web",
     title: "Responsive Websites",
     description: "Mobile-first websites that feel polished across phones, tablets, and desktops.",
-    price: "₹8,999",
+    price: "₹4,999",
     icon: MonitorSmartphone
   },
   {
     type: "web",
     title: "Modern SaaS Websites",
     description: "Premium SaaS-style marketing pages with structured sections and clean CTAs.",
-    price: "₹18,999",
+    price: "₹9,999",
     icon: Blocks
   }
 ] as const;
@@ -217,36 +224,106 @@ export const designPortfolioItems = [
 export const webPortfolioItems = [
   {
     type: "web",
-    title: "Creator Portfolio Website",
+    title: "Muthukumar Portfolio",
     category: "Portfolio Websites",
     stack: ["Next.js", "Tailwind", "Framer Motion"],
     accent: "from-royal/16 via-cyan/10 to-purple/12",
-    summary: "A premium personal website with case studies, services, contact flow, and mobile-first layout."
+    summary: "A modern personal portfolio with clean sections, proof-led layout, and smooth motion.",
+    url: "https://muthukumarj-portfolio.vercel.app/"
   },
   {
     type: "web",
-    title: "Business Landing Page",
-    category: "Landing Pages",
-    stack: ["React", "SEO", "Responsive UI"],
+    title: "SS International Group",
+    category: "Business Websites",
+    stack: ["Business UI", "Responsive", "Trust Sections"],
     accent: "from-cyan/16 via-white to-royal/10",
-    summary: "A conversion-led landing page with trust sections, offer blocks, pricing, and WhatsApp CTA."
+    summary: "A business website experience for real estate, finance, builders, and global services.",
+    url: "https://www.ssingroup.com/"
   },
   {
     type: "web",
-    title: "SaaS Marketing UI",
-    category: "Modern SaaS Websites",
-    stack: ["UI System", "Components", "Animations"],
+    title: "IronVault Website",
+    category: "Landing Pages",
+    stack: ["Landing Page", "Brand UI", "Responsive"],
     accent: "from-purple/14 via-white to-cyan/12",
-    summary: "A clean SaaS-style homepage direction with structured messaging and premium visual rhythm."
+    summary: "A bold landing page concept with strong brand presence and conversion-led content blocks.",
+    url: "https://v0-ironvault-website.vercel.app/"
+  },
+  {
+    type: "web",
+    title: "Iron Vault Fitness",
+    category: "Modern SaaS Websites",
+    stack: ["Fitness Website", "UI System", "Motion"],
+    accent: "from-ink/10 via-white to-royal/12",
+    summary: "A modern fitness website concept with strong hero hierarchy and premium layout rhythm.",
+    url: "https://v0-iron-vault-fitness.vercel.app/"
   }
 ] as const;
 
 export const portfolioItems = [...designPortfolioItems, ...webPortfolioItems] as const;
 
 export const portfolioCategories = {
-  design: ["All", "Thumbnails", "Branding", "Video Editing", "UI Design", "Social Media", "Motion Graphics"],
+  design: ["All", "Thumbnails", "Branding", "Video Editing", "Shorts", "Overlays & Banners", "Social Media", "Motion Graphics"],
   web: ["All", "Landing Pages", "Portfolio Websites", "Business Websites", "Modern SaaS Websites"]
 };
+
+export const designMediaProjects = [
+  {
+    type: "design",
+    title: "Thumbnail Collection",
+    category: "Thumbnails",
+    image: "/portfolio/mapla-gaming.jpg",
+    summary: "A linked gallery of creator and gaming thumbnails from the MK Designz archive.",
+    url: "https://drive.google.com/drive/folders/1aiBcLeaQA6P7nlotTUT-oCjUhmJQzo8N",
+    action: "Open Gallery"
+  },
+  {
+    type: "design",
+    title: "Overlays & Banners",
+    category: "Overlays & Banners",
+    image: "/portfolio/overlay-dsgt.png",
+    summary: "Stream overlays, banners, and creator-ready visual packs.",
+    url: "https://drive.google.com/drive/folders/1jrotMM781By-jLDCdmXNBG9MoKLB5jHf",
+    action: "Open Gallery"
+  },
+  {
+    type: "video",
+    title: "Intro Video",
+    category: "Video Editing",
+    youtubeId: "GGkdrZMWntE",
+    summary: "A creator intro edit with strong pacing and visual energy."
+  },
+  {
+    type: "video",
+    title: "Montage Video",
+    category: "Video Editing",
+    youtubeId: "2OIJKwJNcvI",
+    summary: "A montage edit focused on momentum, music sync, and creator identity."
+  },
+  {
+    type: "video",
+    title: "Shorts Edit 01",
+    category: "Shorts",
+    youtubeId: "AFjoAttXp0Q",
+    summary: "A vertical short with retention-friendly pacing and quick cuts."
+  },
+  {
+    type: "video",
+    title: "Shorts Edit 02",
+    category: "Shorts",
+    youtubeId: "AjMAhaso9WU",
+    summary: "A second short-form edit for social-first content delivery."
+  },
+  {
+    type: "external",
+    title: "Instagram Reel",
+    category: "Shorts",
+    image: "/portfolio/i-fashion.jpg",
+    summary: "A reel-format content piece linked directly to Instagram.",
+    url: "https://www.instagram.com/reel/DG0xMAzvUgA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    action: "Open Reel"
+  }
+] as const;
 
 export const designMatters = [
   {
@@ -273,6 +350,26 @@ export const designMatters = [
     title: "Consistency improves recall",
     description: "Repeated design systems help audiences recognize your brand faster across every channel.",
     icon: Layers3
+  },
+  {
+    title: "Websites build confidence",
+    description: "A modern website gives businesses a reliable home for proof, offers, contact, and credibility.",
+    icon: MonitorSmartphone
+  },
+  {
+    title: "Responsive design matters",
+    description: "Mobile-first pages help clients trust your brand on the device they already use most.",
+    icon: Laptop
+  },
+  {
+    title: "Branding increases conversions",
+    description: "Clear visuals make offers easier to understand and make high-intent visitors more likely to act.",
+    icon: Rocket
+  },
+  {
+    title: "Creators need identity",
+    description: "A consistent content look makes channels feel memorable, professional, and easier to follow.",
+    icon: Sparkles
   }
 ] as const;
 
@@ -317,70 +414,113 @@ export const counters = [
 
 export const pricingPlans = [
   {
-    name: "Starter",
-    price: "₹499",
-    description: "For single creatives and quick launch assets.",
-    features: ["1 design request", "1 revision", "24-48 hour delivery", "Ready-to-post export"],
-    cta: "Start a project"
+    type: "design",
+    name: "Design Starter",
+    price: "₹179",
+    description: "For quick creator assets and single design requests.",
+    features: ["Thumbnail design", "1 revision", "Ready-to-post export", "Fast WhatsApp delivery"],
+    cta: "Book design"
   },
   {
-    name: "Creator",
-    price: "₹1,499",
-    description: "For creators who need consistent, growth-focused content.",
-    features: ["4 design/editing tasks", "Priority delivery", "Thumbnail or shorts support", "Content direction notes"],
+    type: "design",
+    name: "Creator Pack",
+    price: "₹499+",
+    description: "For creators who need edits, banners, thumbnails, or social assets.",
+    features: ["Video editing from ₹499", "Shorts editing ₹249", "Banner design ₹299", "Bulk discounts available"],
     cta: "Choose Creator",
     featured: true
   },
   {
-    name: "Premium",
+    type: "design",
+    name: "Branding",
+    price: "₹1,499",
+    description: "For businesses and creators who need a stronger visual identity.",
+    features: ["Brand direction", "Logo support", "Color and style guidance", "Launch-ready exports"],
+    cta: "Start branding"
+  },
+  {
+    type: "web",
+    name: "Simple Landing",
+    price: "₹1,999",
+    description: "For a focused one-page offer, campaign, or creator profile.",
+    features: ["Simple landing page", "Responsive layout", "WhatsApp CTA", "Domain charges extra"],
+    cta: "Build landing"
+  },
+  {
+    type: "web",
+    name: "Advanced Landing",
+    price: "₹2,999",
+    description: "For a richer landing page with stronger sections and conversion flow.",
+    features: ["Advanced page structure", "Trust sections", "Premium animations", "Domain charges extra"],
+    cta: "Choose advanced",
+    featured: true
+  },
+  {
+    type: "web",
+    name: "Portfolio Website",
     price: "₹4,999",
-    description: "For brands that need a complete visual content system.",
-    features: ["Monthly creative package", "Bulk design discounts", "Branding support", "Weekly planning call"],
-    cta: "Go Premium"
+    description: "For creators and freelancers who need a polished personal website.",
+    features: ["Multipage portfolio", "Project sections", "Contact flow", "Domain charges extra"],
+    cta: "Build portfolio"
+  },
+  {
+    type: "web",
+    name: "Business Website",
+    price: "₹9,999",
+    description: "For brands that need a modern website with trust and lead-generation sections.",
+    features: ["Business pages", "Service structure", "Responsive design", "Domain charges extra"],
+    cta: "Build business site"
   }
 ];
 
 export const webPricing = [
-  "Landing Page - Starts at ₹4,999",
-  "Portfolio Website - Starts at ₹7,999",
-  "Business Website - Starts at ₹14,999"
+  "Simple Landing Page - ₹1,999",
+  "Advanced Landing Page - ₹2,999",
+  "Portfolio Website - ₹4,999",
+  "Business Website - ₹9,999",
+  "Domain not included - domain charges extra"
 ];
 
 export const timeline = [
   {
-    year: "2022",
-    title: "Started with creator visuals",
-    description: "Built thumbnails, overlays, and social creatives for gaming and content channels."
+    year: "2020",
+    title: "Learning design",
+    description: "Started exploring visual design, layout, typography, and creative tools."
   },
   {
-    year: "2023",
-    title: "Expanded into brand systems",
-    description: "Added logo direction, print assets, campaign graphics, and consistent content kits."
+    year: "2021",
+    title: "Freelancing journey",
+    description: "Took on early client work and learned how to deliver clean files with clear communication."
+  },
+  {
+    year: "2022",
+    title: "Gaming creator projects",
+    description: "Built thumbnails, overlays, banners, and edits for gaming and creator channels."
   },
   {
     year: "2024",
-    title: "Moved into strategy-led design",
-    description: "Focused on clean briefs, conversion goals, audience fit, and repeatable workflows."
+    title: "Web development expansion",
+    description: "Expanded into React, Next.js, responsive websites, and premium landing pages."
   },
   {
     year: "Now",
-    title: "Creative + web partner",
-    description: "Helping businesses, agencies, startups, and creators look credible across design and web."
+    title: "Brand building",
+    description: "Positioning MK Designz as a creative and web partner for businesses, brands, and creators."
   }
 ];
 
-export const tools = [
-  "Photoshop",
-  "Illustrator",
-  "Premiere Pro",
-  "After Effects",
-  "Figma",
-  "Canva",
-  "CapCut",
-  "Next.js",
-  "React",
-  "Tailwind CSS"
-];
+export const toolGroups = [
+  {
+    title: "Design",
+    tools: ["Photoshop", "Illustrator", "Canva", "Figma", "After Effects", "Premiere Pro"]
+  },
+  {
+    title: "Development",
+    tools: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Firebase", "Vercel"]
+  }
+] as const;
+
+export const tools = toolGroups.flatMap((group) => group.tools);
 
 export const skills = [
   "Thumbnail strategy",
@@ -402,7 +542,7 @@ export const defaultWhatsappMessage =
   "Hi MK DESINGZ, I'm interested in your services.";
 
 export const socialLinks = [
-  { label: "Instagram", href: "https://www.instagram.com/" },
+  { label: "Instagram", href: "https://www.instagram.com/_mkdesignz_/" },
   { label: "WhatsApp", href: buildWhatsappUrl(defaultWhatsappMessage) },
   { label: "Email", href: "mailto:mkdesingz@example.com" }
 ];

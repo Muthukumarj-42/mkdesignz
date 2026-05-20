@@ -35,7 +35,7 @@ body {
 
 @layer components {
   .section-padding {
-    @apply px-5 py-20 sm:px-6 lg:px-8 lg:py-28;
+    @apply px-5 py-24 sm:px-6 lg:px-8 lg:py-32;
   }
 
   .container-premium {
@@ -43,7 +43,7 @@ body {
   }
 
   .eyebrow {
-    @apply text-sm font-bold uppercase tracking-[0.24em] text-royal;
+    @apply text-sm font-extrabold uppercase tracking-[0.24em] text-royal;
   }
 
   .btn-primary {
@@ -63,7 +63,7 @@ body {
   }
 
   .field {
-    @apply w-full rounded-2xl border border-line bg-white px-4 py-3.5 text-sm text-ink outline-none transition placeholder:text-muted/70 focus:border-royal focus:ring-4 focus:ring-royal/10;
+    @apply w-full rounded-2xl border border-line bg-white px-4 py-4 text-base text-ink outline-none transition placeholder:text-muted/70 focus:border-royal focus:ring-4 focus:ring-royal/10;
   }
 }
 

@@ -2,18 +2,31 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { portfolioCategories, portfolioItems, ShowcaseType, showcaseTabs } from "@/lib/data";
+import { ExternalLink, Play } from "lucide-react";
+import {
+  designMediaProjects,
+  designPortfolioItems,
+  portfolioCategories,
+  ShowcaseType,
+  showcaseTabs,
+  webPortfolioItems
+} from "@/lib/data";
 import { MotionDiv } from "./motion";
 
 export function PortfolioFilter() {
   const [activeType, setActiveType] = useState<ShowcaseType>("design");
   const [active, setActive] = useState("All");
+  const [videoId, setVideoId] = useState<string | null>(null);
   const categories = portfolioCategories[activeType];
   const items = useMemo(
-    () =>
-      portfolioItems.filter(
-        (item) => item.type === activeType && (active === "All" || item.category === active)
-      ),
+    () => {
+      const source =
+        activeType === "design"
+          ? [...designPortfolioItems, ...designMediaProjects]
+          : [...webPortfolioItems];
+
+      return source.filter((item) => active === "All" || item.category === active);
+    },
     [active, activeType]
   );
 
@@ -60,7 +73,7 @@ export function PortfolioFilter() {
         ))}
       </div>
 
-      <MotionDiv layout className="grid auto-rows-[290px] gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <MotionDiv layout className="grid auto-rows-[320px] gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <MotionDiv
             layout
@@ -70,7 +83,30 @@ export function PortfolioFilter() {
             transition={{ duration: 0.35 }}
             className={`group relative overflow-hidden rounded-[1.5rem] border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-premium ${"span" in item ? item.span : ""}`}
           >
-            {"image" in item ? (
+            {"youtubeId" in item ? (
+              <button
+                type="button"
+                onClick={() => setVideoId(item.youtubeId)}
+                className="absolute inset-0 text-left"
+              >
+                <Image
+                  src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
+                  alt={item.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/86 via-ink/18 to-transparent" />
+                <span className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-white text-ink shadow-soft transition group-hover:scale-110">
+                  <Play size={22} fill="currentColor" />
+                </span>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan">{item.category}</p>
+                  <h3 className="mt-2 text-2xl font-extrabold">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/75">{item.summary}</p>
+                </div>
+              </button>
+            ) : "image" in item ? (
               <>
                 <Image
                   src={item.image}
@@ -84,6 +120,16 @@ export function PortfolioFilter() {
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan">{item.category}</p>
                   <h3 className="mt-2 text-xl font-extrabold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-white/75">{item.summary}</p>
+                  {"url" in item ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-ink transition hover:-translate-y-0.5"
+                    >
+                      {item.action} <ExternalLink size={14} />
+                    </a>
+                  ) : null}
                 </div>
               </>
             ) : (
@@ -95,15 +141,13 @@ export function PortfolioFilter() {
                       <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
                       <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
                     </div>
-                    <div className="overflow-hidden rounded-xl bg-white p-4 transition duration-500 group-hover:scale-[1.03]">
-                      <div className="h-5 w-2/3 rounded-full bg-ink" />
-                      <div className="mt-3 h-3 w-full rounded-full bg-line" />
-                      <div className="mt-2 h-3 w-3/4 rounded-full bg-line" />
-                      <div className="mt-5 grid grid-cols-3 gap-2">
-                        <div className="h-16 rounded-xl bg-royal/12" />
-                        <div className="h-16 rounded-xl bg-cyan/14" />
-                        <div className="h-16 rounded-xl bg-purple/12" />
-                      </div>
+                    <div className="relative h-28 overflow-hidden rounded-xl bg-white transition duration-500 group-hover:scale-[1.03]">
+                      <iframe
+                        src={item.url}
+                        title={`${item.title} website preview`}
+                        className="pointer-events-none h-[420px] w-[720px] origin-top-left scale-[0.18] border-0"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                   <div>
@@ -117,6 +161,14 @@ export function PortfolioFilter() {
                         </span>
                       ))}
                     </div>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-xs font-extrabold text-white transition hover:-translate-y-0.5"
+                    >
+                      Visit Website <ExternalLink size={14} />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -124,6 +176,34 @@ export function PortfolioFilter() {
           </MotionDiv>
         ))}
       </MotionDiv>
+
+      {videoId ? (
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-ink/80 p-5 backdrop-blur-sm" onClick={() => setVideoId(null)}>
+          <MotionDiv
+            initial={{ opacity: 0, scale: 0.96, y: 18 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            className="relative w-full max-w-5xl overflow-hidden rounded-[1.5rem] bg-black shadow-premium"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setVideoId(null)}
+              className="absolute right-4 top-4 z-10 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-ink shadow-soft"
+            >
+              Close
+            </button>
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                title="MK Designz video preview"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="h-full w-full border-0"
+              />
+            </div>
+          </MotionDiv>
+        </div>
+      ) : null}
     </div>
   );
 }

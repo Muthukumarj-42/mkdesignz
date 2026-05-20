@@ -56,17 +56,31 @@ export default function Home() {
           >
             <div className="soft-gradient absolute -inset-5 rounded-[2.5rem]" />
             <div className="relative overflow-hidden rounded-[2rem] border border-line bg-white p-4 shadow-premium">
-              <div className="grid gap-4">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-surface">
-                  <Image src="/portfolio/mapla-gaming.jpg" alt="MK DESINGZ creative preview" fill priority className="object-cover" />
+              <div className="relative min-h-[460px] overflow-hidden rounded-[1.5rem] bg-ink p-6 text-white">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(35,184,212,0.26),transparent_24rem),radial-gradient(circle_at_82%_10%,rgba(91,53,213,0.24),transparent_22rem)]" />
+                <div className="absolute left-6 top-6 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-white/80">
+                  MK Designz Studio
                 </div>
-                <div className="grid gap-3 sm:grid-cols-5">
-                  {valueProps.map((item) => (
-                    <div key={item.title} className="rounded-2xl border border-line bg-white p-4 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+                <div className="absolute left-1/2 top-20 flex h-40 w-40 -translate-x-1/2 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)]">
+                  <div className="relative h-28 w-28 overflow-hidden rounded-full bg-ink">
+                    <Image src="/logo.png" alt="MK DESINGZ brand showcase" fill priority className="object-contain p-3" />
+                  </div>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6 grid gap-3 sm:grid-cols-2">
+                  {valueProps.map((item, index) => (
+                    <div
+                      key={item.title}
+                      className={`rounded-2xl border border-white/10 bg-white p-4 text-ink shadow-soft transition duration-300 hover:-translate-y-1 ${
+                        index === 0 ? "sm:col-span-2" : ""
+                      }`}
+                    >
                       <item.icon size={20} className="text-royal" />
                       <p className="mt-3 text-xs font-extrabold leading-5 text-ink">{item.title}</p>
                     </div>
                   ))}
+                </div>
+                <div className="absolute right-8 top-1/2 hidden w-44 -translate-y-1/2 rounded-2xl border border-white/10 bg-white/10 p-4 text-sm font-bold text-white/80 backdrop-blur sm:block">
+                  Branding, websites, thumbnails, and creator content under one clean visual system.
                 </div>
               </div>
             </div>
@@ -82,7 +96,7 @@ export default function Home() {
             description="Great design is more than decoration. It builds confidence, creates recognition, improves performance, and makes every client touchpoint feel intentional."
             align="center"
           />
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {designMatters.map((item, index) => (
               <Reveal key={item.title} delay={index * 0.04} className="card-premium p-6">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-royal/10 text-royal">
