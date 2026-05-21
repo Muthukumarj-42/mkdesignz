@@ -3,6 +3,11 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { CtaBand } from "@/components/cta-band";
+import {
+  MobileDesignImpactSlider,
+  MobileProjectSlider,
+  MobileTestimonials
+} from "@/components/mobile-home-experience";
 import { MotionDiv } from "@/components/motion";
 import { PortfolioFilter } from "@/components/portfolio-filter";
 import { Reveal } from "@/components/reveal";
@@ -58,12 +63,27 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-[1.5rem] border border-line bg-white p-2.5 shadow-premium sm:rounded-[2rem] sm:p-4">
               <div className="relative overflow-hidden rounded-[1.25rem] bg-ink p-4 text-white sm:rounded-[1.5rem] sm:p-6">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(35,184,212,0.26),transparent_24rem),radial-gradient(circle_at_82%_10%,rgba(91,53,213,0.24),transparent_22rem)]" />
-                <div className="relative z-10 flex min-h-[410px] flex-col items-center justify-between gap-6 py-5 sm:min-h-[460px] sm:py-7">
+                <div className="relative z-10 flex min-h-[500px] flex-col items-center justify-between gap-5 py-5 sm:min-h-[540px] sm:py-7">
                   <div className="flex flex-1 items-center justify-center">
-                    <div className="flex h-44 w-44 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)] sm:h-56 sm:w-56">
-                      <div className="relative h-36 w-36 overflow-hidden rounded-full bg-ink sm:h-44 sm:w-44">
+                    <div className="flex h-40 w-40 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)] sm:h-52 sm:w-52">
+                      <div className="relative h-32 w-32 overflow-hidden rounded-full bg-ink sm:h-40 sm:w-40">
                         <Image src="/logo.png" alt="MK DESINGZ brand showcase" fill priority className="object-contain p-3" />
                       </div>
+                    </div>
+                  </div>
+
+                  <div className="w-full rounded-[1.35rem] border border-white/10 bg-white p-3 text-ink shadow-soft sm:p-4">
+                    <div className="grid grid-cols-3 gap-2">
+                      {counters.map((counter) => (
+                        <div key={counter.label} className="rounded-2xl bg-gradient-to-br from-surface to-white p-3 text-center">
+                          <p className="text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
+                            <AnimatedCounter value={counter.value} suffix={counter.suffix} />
+                          </p>
+                          <p className="mt-1 text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-muted">
+                            {counter.label}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
@@ -89,7 +109,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <MobileProjectSlider />
+
+      <MobileDesignImpactSlider />
+
+      <section className="section-padding hidden bg-white lg:block">
         <div className="container-premium">
           <SectionHeading
             eyebrow="Design impact"
@@ -125,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding hidden lg:block">
         <div className="container-premium">
           <SectionHeading
             eyebrow="Portfolio"
@@ -139,7 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding hidden bg-white lg:block">
         <div className="container-premium">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1fr] lg:items-start">
             <SectionHeading
@@ -171,7 +195,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding hidden lg:block">
         <div className="container-premium grid gap-8 lg:grid-cols-3">
           {["Businesses", "YouTubers", "Startups"].map((client) => (
             <Reveal key={client} className="card-premium p-7">
@@ -184,6 +208,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <MobileTestimonials />
 
       <CtaBand />
     </>

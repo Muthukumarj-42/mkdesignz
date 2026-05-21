@@ -162,9 +162,55 @@ export const services = [
   },
 ] as const;
 
-export const designPortfolioItems = [] as const;
+export const designPortfolioItems = [
+  {
+    type: "design",
+    title: "Gaming Thumbnail System",
+    category: "Thumbnails",
+    image: "/portfolio/mapla-gaming.jpg",
+    summary: "High-impact creator thumbnail direction."
+  },
+  {
+    type: "design",
+    title: "Creator Promo Visual",
+    category: "Thumbnails",
+    image: "/portfolio/poona-kutty.jpg",
+    summary: "Attention-led YouTube visual system."
+  },
+  {
+    type: "design",
+    title: "Fashion Campaign Creative",
+    category: "Social Media",
+    image: "/portfolio/i-fashion.jpg",
+    summary: "Campaign-ready visual for product promotion."
+  },
+  {
+    type: "design",
+    title: "SSG Brand Identity",
+    category: "Branding",
+    image: "/portfolio/ssg-logo.jpg",
+    summary: "Clean brand asset for local business identity."
+  },
+  {
+    type: "design",
+    title: "Video Overlay Pack",
+    category: "Overlays & Banners",
+    image: "/portfolio/overlay-dsgt.png",
+    summary: "Creator overlay and gaming stream visual."
+  }
+] as const;
 
 export const webPortfolioItems = [
+  {
+    type: "web",
+    title: "SS International Group",
+    category: "Business Websites",
+    stack: ["Business UI", "Responsive", "Trust Sections"],
+    accent: "from-cyan/16 via-white to-royal/10",
+    summary:
+      "A business website experience for real estate, finance, builders, and global services.",
+    url: "https://www.ssingroup.com/",
+  },
   {
     type: "web",
     title: "Muthukumar Portfolio",
@@ -195,6 +241,64 @@ export const webPortfolioItems = [
       "A modern fitness website concept with strong hero hierarchy and premium layout rhythm.",
     url: "https://v0-iron-vault-fitness.vercel.app/",
   },
+] as const;
+
+export const projectHighlights = [
+  {
+    type: "web",
+    title: "SS International Group",
+    category: "Business Website",
+    summary: "A trust-focused business website for a multi-service brand.",
+    url: "https://www.ssingroup.com/",
+    accent: "from-cyan/16 via-white to-royal/10"
+  },
+  {
+    type: "web",
+    title: "Muthukumar Portfolio",
+    category: "Portfolio Website",
+    summary: "A polished personal portfolio with clean proof and project storytelling.",
+    url: "https://muthukumarj-portfolio.vercel.app/",
+    accent: "from-royal/16 via-cyan/10 to-purple/12"
+  },
+  {
+    type: "web",
+    title: "IronVault Website",
+    category: "Landing Page",
+    summary: "A bold landing page concept with strong brand presence.",
+    url: "https://v0-ironvault-website.vercel.app/",
+    accent: "from-purple/14 via-white to-cyan/12"
+  },
+  {
+    type: "web",
+    title: "Iron Vault Fitness",
+    category: "Fitness Website",
+    summary: "A modern fitness website concept with strong visual hierarchy.",
+    url: "https://v0-iron-vault-fitness.vercel.app/",
+    accent: "from-ink/10 via-white to-royal/12"
+  },
+  {
+    type: "image",
+    title: "Thumbnail Collection",
+    category: "Graphic Design",
+    summary: "Real creator thumbnail work built for stronger clicks.",
+    image: "/portfolio/mapla-gaming.jpg",
+    url: "https://drive.google.com/drive/folders/1aiBcLeaQA6P7nlotTUT-oCjUhmJQzo8N"
+  },
+  {
+    type: "image",
+    title: "Overlay & Banner Work",
+    category: "Creator Assets",
+    summary: "Real overlays and banners for gaming creators and channels.",
+    image: "/portfolio/overlay-dsgt.png",
+    url: "https://drive.google.com/drive/folders/1jrotMM781By-jLDCdmXNBG9MoKLB5jHf"
+  },
+  {
+    type: "video",
+    title: "Intro Video",
+    category: "Video Editing",
+    summary: "A creator intro edit with strong pacing and visual energy.",
+    youtubeId: "GGkdrZMWntE"
+  }
 ] as const;
 
 export const portfolioItems = [
@@ -274,11 +378,29 @@ export const designMediaProjects = [
     type: "external",
     title: "Instagram Reel",
     category: "Shorts",
-    image: "/portfolio/instagram-reel.jpg",
+    image: "/portfolio/i-fashion.jpg",
     summary: "A reel-format content piece linked directly to Instagram.",
     url: "https://www.instagram.com/reel/DG0xMAzvUgA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     action: "Open Reel",
   },
+] as const;
+
+export const testimonials = [
+  {
+    quote: "Clean designs, fast delivery, and easy communication. The work looked ready to post immediately.",
+    name: "Creator client",
+    role: "YouTube & social content"
+  },
+  {
+    quote: "The website structure felt professional and helped explain the brand clearly on mobile.",
+    name: "Business client",
+    role: "Website project"
+  },
+  {
+    quote: "The thumbnails and overlays gave the channel a more consistent identity.",
+    name: "Gaming creator",
+    role: "Design package"
+  }
 ] as const;
 
 export const designMatters = [
