@@ -206,6 +206,16 @@ export const webPortfolioItems = [
   },
   {
     type: "web",
+    title: "Thallu vandi",
+    category: "Marketplace Websites",
+    stack: ["React", "Brand UI", "Responsive"],
+    accent: "from-purple/14 via-white to-cyan/12",
+    summary:
+      "A marketplace website for a local business.Thallu vandi is a local business that delivers food and essentials in the coimbatore area. The website features a clean design with a focus on usability and mobile responsiveness, making it easy for customers to place orders and learn about the services offered.",
+    url: "https://thalluvandi.vercel.app/",
+  },
+  {
+    type: "web",
     title: "IronVault Website",
     category: "Landing Pages",
     stack: ["Landing Page", "Brand UI", "Responsive"],
@@ -236,14 +246,7 @@ export const projectHighlights = [
     url: "https://muthukumarj-portfolio.vercel.app/",
     accent: "from-royal/16 via-cyan/10 to-purple/12",
   },
-  {
-    type: "web",
-    title: "IronVault Website",
-    category: "Landing Page",
-    summary: "A bold landing page concept with strong brand presence.",
-    url: "https://v0-ironvault-website.vercel.app/",
-    accent: "from-purple/14 via-white to-cyan/12",
-  },
+
   {
     type: "web",
     title: "Iron Vault Fitness",
