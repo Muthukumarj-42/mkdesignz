@@ -2,11 +2,12 @@ import Image from "next/image";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { Testimonials } from "@/components/testimonials";
 import { skills, timeline, toolGroups } from "@/lib/data";
 
 export const metadata = {
   title: "About",
-  description: "Learn about MK DESINGZ, a premium creative and web development freelance brand."
+  description: "Learn about MK Designz, a premium creative and web development freelance brand."
 };
 
 export default function AboutPage() {
@@ -15,12 +16,12 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="container-premium grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <Reveal>
-            <p className="eyebrow">About MK DESINGZ</p>
+            <p className="eyebrow">About MK Designz</p>
             <h1 className="mt-4 text-5xl font-extrabold tracking-tight text-ink md:text-7xl">
               A creative and web partner for brands that want to look credible everywhere.
             </h1>
             <p className="mt-7 text-lg leading-9 text-muted md:text-xl">
-              MK DESINGZ blends design taste, content strategy, web structure, and practical delivery for creators, businesses, agencies, and startups that need stronger visual presence.
+              MK Designz blends design taste, content strategy, web structure, and practical delivery for creators, businesses, agencies, and startups that need stronger visual presence.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="relative">
@@ -28,7 +29,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(35,184,212,0.22),transparent_24rem),radial-gradient(circle_at_90%_20%,rgba(91,53,213,0.22),transparent_22rem)]" />
               <div className="relative mx-auto flex aspect-square max-w-sm items-center justify-center rounded-full border border-white/10 bg-white shadow-[0_28px_80px_rgba(255,255,255,0.14)]">
                 <div className="relative h-56 w-56 overflow-hidden rounded-full bg-ink">
-                  <Image src="/logo.png" alt="MK DESINGZ professional brand mark" fill className="object-contain p-5" />
+                  <Image src="/logo.png" alt="MK Designz professional brand mark" fill className="object-contain p-5" />
                 </div>
               </div>
               <p className="relative mt-8 text-center text-sm font-extrabold uppercase tracking-[0.24em] text-white/70">
@@ -120,6 +121,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       <CtaBand />
     </>

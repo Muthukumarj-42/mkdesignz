@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/section-heading";
 
 export const metadata = {
   title: "Portfolio",
-  description: "Explore MK DESINGZ portfolio work across thumbnails, branding, UI design, social media, and motion graphics."
+  description: "Explore MK Designz portfolio work across thumbnails, branding, UI design, social media, and motion graphics."
 };
 
 export default function PortfolioPage() {

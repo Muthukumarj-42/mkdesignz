@@ -23,7 +23,7 @@ export function AnimatedCounter({ value, suffix = "" }: AnimatedCounterProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.1 }
     );
 
     observer.observe(node);

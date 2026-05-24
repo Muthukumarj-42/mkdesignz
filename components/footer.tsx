@@ -20,10 +20,10 @@ export function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-4">
             <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-black shadow-[0_18px_50px_rgba(0,0,0,0.3)]">
-              <Image src="/logo.png" alt="MK DESINGZ logo" width={48} height={48} className="object-contain" />
+              <Image src="/logo.png" alt="MK Designz logo" width={48} height={48} className="object-contain" />
             </span>
             <span>
-              <span className="block whitespace-nowrap text-base font-extrabold tracking-[0.14em] text-white sm:text-lg sm:tracking-[0.16em]">MK DESINGZ</span>
+              <span className="block whitespace-nowrap text-base font-extrabold tracking-[0.14em] text-white sm:text-lg sm:tracking-[0.16em]">MK Designz</span>
               <span className="text-sm font-semibold text-white/58">Creative + Web Studio</span>
             </span>
           </Link>
@@ -36,9 +36,6 @@ export function Footer() {
             </Link>
             <Link href={buildWhatsappUrl(defaultWhatsappMessage)} target="_blank" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:bg-white hover:text-ink">
               <MessageCircle size={18} />
-            </Link>
-            <Link href="mailto:mkdesingz@example.com" className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:bg-white hover:text-ink">
-              <Mail size={18} />
             </Link>
           </div>
         </div>
@@ -71,9 +68,6 @@ export function Footer() {
             <Link href={buildWhatsappUrl(defaultWhatsappMessage)} target="_blank" className="flex min-h-9 items-center gap-3 hover:text-white">
               <Phone size={16} /> 7305514199
             </Link>
-            <Link href="mailto:mkdesingz@example.com" className="flex min-h-9 items-center gap-3 hover:text-white">
-              <Mail size={16} /> mkdesingz@example.com
-            </Link>
             <span className="flex items-center gap-3">
               <MapPin size={16} /> India
             </span>
@@ -81,7 +75,7 @@ export function Footer() {
         </div>
       </div>
       <div className="relative border-t border-white/10 px-5 py-5 text-center text-sm font-semibold text-white/48">
-        © {new Date().getFullYear()} MK DESINGZ. All rights reserved.
+        © {new Date().getFullYear()} MK Designz. All rights reserved.
       </div>
     </footer>
   );

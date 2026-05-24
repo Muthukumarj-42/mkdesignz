@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/section-heading";
 
 export const metadata = {
   title: "Pricing",
-  description: "SaaS-style pricing packages for MK DESINGZ design, editing, branding, and content services in Indian Rupees."
+  description: "SaaS-style pricing packages for MK Designz design, editing, branding, and content services in Indian Rupees."
 };
 
 export default function PricingPage() {

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, Play, Quote } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { designMatters, projectHighlights, testimonials } from "@/lib/data";
+import { projectHighlights } from "@/lib/data";
 import { MotionDiv } from "./motion";
 
 function useAutoIndex(length: number, delay = 3600) {
@@ -18,7 +18,7 @@ function useAutoIndex(length: number, delay = 3600) {
     }, delay);
 
     return () => window.clearInterval(timer);
-  }, [delay, length, paused]);
+  }, [delay, length, paused, index]);
 
   return { index, setIndex, setPaused };
 }
@@ -139,6 +139,18 @@ export function MobileProjectSlider() {
             initial={{ opacity: 0, x: 28 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.15}
+            onDragEnd={(event, info) => {
+              const swipeThreshold = 50;
+              if (info.offset.x < -swipeThreshold) {
+                setIndex((value) => (value + 1) % projectHighlights.length);
+              } else if (info.offset.x > swipeThreshold) {
+                setIndex((value) => (value - 1 + projectHighlights.length) % projectHighlights.length);
+              }
+            }}
+            className="cursor-grab active:cursor-grabbing"
           >
             {preview}
             <div className="p-3">
@@ -205,71 +217,6 @@ export function MobileProjectSlider() {
   );
 }
 
-export function MobileDesignImpactSlider() {
-  const { index, setIndex, setPaused } = useAutoIndex(designMatters.length, 3400);
-  const item = designMatters[index];
 
-  return (
-    <section className="bg-white px-4 py-10 lg:hidden">
-      <div className="mx-auto max-w-md">
-        <p className="eyebrow">Why it works</p>
-        <h2 className="mt-2 text-3xl font-extrabold leading-tight tracking-tight text-ink">
-          Design that earns trust faster.
-        </h2>
-        <div
-          onPointerEnter={() => setPaused(true)}
-          onPointerLeave={() => setPaused(false)}
-          onTouchStart={() => setPaused(true)}
-          onTouchEnd={() => setPaused(false)}
-          className="mt-6 overflow-hidden rounded-[1.5rem] border border-line bg-white p-5 shadow-premium"
-        >
-          <MotionDiv
-            key={item.title}
-            initial={{ opacity: 0, y: 18, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-royal/10 text-royal">
-              <item.icon size={25} />
-            </span>
-            <h3 className="mt-6 text-2xl font-extrabold tracking-tight text-ink">
-              {item.title}
-            </h3>
-            <p className="mt-3 text-base leading-8 text-muted">{item.description}</p>
-          </MotionDiv>
-        </div>
-        <Dots active={index} count={designMatters.length} onSelect={setIndex} />
-      </div>
-    </section>
-  );
-}
 
-export function MobileTestimonials() {
-  return (
-    <section className="bg-white px-4 py-10 lg:hidden">
-      <div className="mx-auto max-w-md">
-        <p className="eyebrow">Social proof</p>
-        <h2 className="mt-2 text-3xl font-extrabold leading-tight tracking-tight text-ink">
-          Trusted by creators and brands.
-        </h2>
-        <div className="mt-6 flex gap-4 overflow-x-auto pb-2">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.name}
-              className="min-w-[82%] rounded-[1.35rem] border border-line bg-surface p-5"
-            >
-              <Quote size={22} className="text-royal" />
-              <p className="mt-4 text-base font-semibold leading-7 text-ink">
-                {testimonial.quote}
-              </p>
-              <p className="mt-5 text-sm font-extrabold text-ink">{testimonial.name}</p>
-              <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-muted">
-                {testimonial.role}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+

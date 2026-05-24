@@ -17,7 +17,7 @@ export function ContactForm() {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const message = [
-      "Hi MK DESINGZ, I want to discuss a project.",
+      "Hi MK Designz, I want to discuss a project.",
       "",
       `Name: ${form.get("name")}`,
       `Email: ${form.get("email")}`,

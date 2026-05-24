@@ -7,7 +7,7 @@ import { buildWhatsappUrl, defaultWhatsappMessage } from "@/lib/data";
 
 export const metadata = {
   title: "Contact",
-  description: "Contact MK DESINGZ for graphic design, thumbnail design, branding, video editing, UI/UX, and social media design projects."
+  description: "Contact MK Designz for graphic design, thumbnail design, branding, video editing, UI/UX, and social media design projects."
 };
 
 const contactCards = [
@@ -24,12 +24,6 @@ const contactCards = [
     icon: Camera
   },
   {
-    title: "Email",
-    detail: "mkdesingz@example.com",
-    href: "mailto:mkdesingz@example.com",
-    icon: Mail
-  },
-  {
     title: "Response time",
     detail: "Usually within 2-6 hours",
     href: "/contact",
@@ -44,7 +38,7 @@ export default function ContactPage() {
         <SectionHeading
           eyebrow="Contact"
           title="Tell us what you need. We will open WhatsApp with the full brief."
-          description="Share your service, budget, and project details. The form formats your message and opens WhatsApp directly to MK DESINGZ."
+          description="Share your service, budget, and project details. The form formats your message and opens WhatsApp directly to MK Designz."
           align="center"
         />
         <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_0.72fr]">

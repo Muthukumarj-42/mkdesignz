@@ -4,10 +4,9 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { CtaBand } from "@/components/cta-band";
 import {
-  MobileDesignImpactSlider,
-  MobileProjectSlider,
-  MobileTestimonials
+  MobileProjectSlider
 } from "@/components/mobile-home-experience";
+import { Testimonials } from "@/components/testimonials";
 import { MotionDiv } from "@/components/motion";
 import { PortfolioFilter } from "@/components/portfolio-filter";
 import { Reveal } from "@/components/reveal";
@@ -43,14 +42,6 @@ export default function Home() {
                 </Link>
               </div>
             </MotionDiv>
-
-            <div className="mt-7 flex flex-wrap gap-2.5 sm:mt-9 sm:gap-3">
-              {heroStats.map((stat) => (
-                <span key={stat} className="chip">
-                  {stat}
-                </span>
-              ))}
-            </div>
           </div>
 
           <MotionDiv
@@ -67,7 +58,7 @@ export default function Home() {
                   <div className="flex flex-1 items-center justify-center">
                     <div className="flex h-40 w-40 items-center justify-center rounded-full border border-white/15 bg-white shadow-[0_30px_90px_rgba(255,255,255,0.18)] sm:h-52 sm:w-52">
                       <div className="relative h-32 w-32 overflow-hidden rounded-full bg-ink sm:h-40 sm:w-40">
-                        <Image src="/logo.png" alt="MK DESINGZ brand showcase" fill priority className="object-contain p-3" />
+                        <Image src="/logo.png" alt="MK Designz brand showcase" fill priority className="object-contain p-3" />
                       </div>
                     </div>
                   </div>
@@ -86,22 +77,6 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-
-                  <div className="w-full rounded-[1.35rem] border border-white/10 bg-white p-3 text-ink shadow-soft sm:p-4">
-                    <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3">
-                      {valueProps.map((item) => (
-                        <div
-                          key={item.title}
-                          className="flex min-h-20 items-center gap-3 rounded-2xl border border-line bg-surface p-3 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-soft"
-                        >
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-royal/10 text-royal">
-                            <item.icon size={18} />
-                          </span>
-                          <p className="text-xs font-extrabold leading-4 text-ink">{item.title}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -111,9 +86,7 @@ export default function Home() {
 
       <MobileProjectSlider />
 
-      <MobileDesignImpactSlider />
-
-      <section className="section-padding hidden bg-white lg:block">
+      <section className="section-padding bg-white">
         <div className="container-premium">
           <SectionHeading
             eyebrow="Design impact"
@@ -121,9 +94,9 @@ export default function Home() {
             description="Great design is more than decoration. It builds confidence, creates recognition, improves performance, and makes every client touchpoint feel intentional."
             align="center"
           />
-          <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {designMatters.map((item, index) => (
-              <Reveal key={item.title} delay={index * 0.04} className="card-premium p-5 sm:p-6">
+          <div className="mt-10 -mx-4 flex gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+            {designMatters.slice(0, 3).map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.04} className="card-premium min-w-[280px] shrink-0 p-5 sm:p-6 sm:min-w-0">
                 <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-royal/10 text-royal">
                   <item.icon size={25} />
                 </span>
@@ -209,7 +182,7 @@ export default function Home() {
         </div>
       </section>
 
-      <MobileTestimonials />
+      <Testimonials />
 
       <CtaBand />
     </>

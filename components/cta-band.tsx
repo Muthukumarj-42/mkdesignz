@@ -14,7 +14,7 @@ export function CtaBand() {
             </h2>
           </div>
           <Link href="/contact" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:-translate-y-1 hover:shadow-soft sm:w-auto">
-            Hire MK DESINGZ <ArrowRight size={18} />
+            Hire MK Designz <ArrowRight size={18} />
           </Link>
         </div>
       </Reveal>

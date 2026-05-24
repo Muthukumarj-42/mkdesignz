@@ -14,7 +14,7 @@ import {
 import { MotionDiv } from "./motion";
 
 export function PortfolioFilter() {
-  const [activeType, setActiveType] = useState<ShowcaseType>("design");
+  const [activeType, setActiveType] = useState<ShowcaseType>("web");
   const [active, setActive] = useState("All");
   const [videoId, setVideoId] = useState<string | null>(null);
   const categories = portfolioCategories[activeType];

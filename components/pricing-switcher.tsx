@@ -7,7 +7,7 @@ import { MotionDiv } from "./motion";
 import { pricingPlans, ShowcaseType, showcaseTabs } from "@/lib/data";
 
 export function PricingSwitcher() {
-  const [active, setActive] = useState<ShowcaseType>("design");
+  const [active, setActive] = useState<ShowcaseType>("web");
   const plans = useMemo(
     () => pricingPlans.filter((plan) => plan.type === active),
     [active]

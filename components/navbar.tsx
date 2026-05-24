@@ -34,13 +34,13 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="MK DESINGZ home">
+        <Link href="/" className="flex items-center gap-3" aria-label="MK Designz home">
           <span className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-ink bg-ink shadow-[0_14px_36px_rgba(17,18,23,0.24)] sm:h-12 sm:w-12">
-            <Image src="/logo.png" alt="MK DESINGZ logo" width={42} height={42} className="object-contain" />
+            <Image src="/logo.png" alt="MK Designz logo" width={42} height={42} className="object-contain" />
           </span>
           <span className="min-w-0 leading-none">
             <span className="block whitespace-nowrap text-sm font-extrabold tracking-[0.12em] text-ink sm:text-lg">
-              MK DESINGZ
+              MK Designz
             </span>
             <span className="mt-1 hidden text-[11px] font-bold uppercase tracking-[0.22em] text-muted sm:block">
               Creative + Web

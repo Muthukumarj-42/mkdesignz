@@ -7,13 +7,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
   title: {
-    default: "MK DESINGZ | Premium Creative Design Portfolio",
-    template: "%s | MK DESINGZ"
+    default: "MK Designz | Premium Creative Design Portfolio",
+    template: "%s | MK Designz"
   },
   description:
-    "MK DESINGZ helps creators, businesses, agencies, startups, and brands grow with modern design, editing, branding, thumbnails, and digital content solutions.",
+    "MK Designz helps creators, businesses, agencies, startups, and brands grow with modern design, editing, branding, thumbnails, and digital content solutions.",
   keywords: [
-    "MK DESINGZ",
+    "MK Designz",
     "graphic design",
     "thumbnail design",
     "video editing",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "creative agency India"
   ],
   openGraph: {
-    title: "MK DESINGZ | Designs That Build Attention",
+    title: "MK Designz | Designs That Build Attention",
     description:
       "Modern design, editing, branding, and digital content solutions for creators and businesses.",
     type: "website",

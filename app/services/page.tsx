@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/section-heading";
 
 export const metadata = {
   title: "Services",
-  description: "Premium design, editing, branding, social media, UI/UX, YouTube SEO, and creator content services by MK DESINGZ."
+  description: "Premium design, editing, branding, social media, UI/UX, YouTube SEO, and creator content services by MK Designz."
 };
 
 export default function ServicesPage() {
