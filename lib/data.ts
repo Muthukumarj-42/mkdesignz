@@ -193,7 +193,7 @@ export const webPortfolioItems = [
     accent: "from-purple/14 via-white to-cyan/12",
     summary:
       "A marketplace website for a local business.Thallu vandi is a local business that delivers food and essentials in the coimbatore area. The website features a clean design with a focus on usability and mobile responsiveness, making it easy for customers to place orders and learn about the services offered.",
-    url: "https://thalluvandi.vercel.app/",
+    url: "https://nammathalluvandi.in",
   },
   {
     type: "web",
