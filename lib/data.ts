@@ -167,23 +167,13 @@ export const designPortfolioItems = [] as const;
 export const webPortfolioItems = [
   {
     type: "web",
-    title: "SS INTERNATIONAL GROUP - BUSINESS WEBSITE",
-    category: "Business Websites",
-    stack: ["Next.js", "Tailwind", "Framer Motion"],
-    accent: "from-royal/16 via-cyan/10 to-purple/12",
-    summary:
-      "Clean business website for a local trading company. The website features a modern design with clear sections for services, about, and contact information, making it easy for potential clients to learn about the company and get in touch.",
-    url: "https://ssingroup.com",
-  },
-  {
-    type: "web",
-    title: "SS INTERNATIONAL GROUP VERSION 2 - BUSINESS WEBSITE",
+    title: "SS INTERNATIONAL - BUSINESS WEBSITE",
     category: "Business Websites",
     stack: ["Next.js", "Tailwind", "Framer Motion"],
     accent: "from-royal/16 via-cyan/10 to-purple/12",
     summary:
       "A premium business portal for a global trading group, currently in active custom-coding and development phase. Built to feature cutting-edge performance, modern sections, and extremely refined micro-animations.",
-    url: "https://ssingroup-v2.vercel.app/",
+    url: "https://ssingroup.com",
   },
   {
     type: "web",
@@ -194,16 +184,6 @@ export const webPortfolioItems = [
     summary:
       "A marketplace website for a local business.Thallu vandi is a local business that delivers food and essentials in the coimbatore area. The website features a clean design with a focus on usability and mobile responsiveness, making it easy for customers to place orders and learn about the services offered.",
     url: "https://nammathalluvandi.in",
-  },
-  {
-    type: "web",
-    title: "Muthukumar Portfolio",
-    category: "Portfolio Websites",
-    stack: ["Next.js", "Tailwind", "Framer Motion"],
-    accent: "from-royal/16 via-cyan/10 to-purple/12",
-    summary:
-      "A modern personal portfolio with clean sections, proof-led layout, and smooth motion.",
-    url: "https://muthukumarj-portfolio.vercel.app/",
   },
   {
     type: "web",
