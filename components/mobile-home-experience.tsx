@@ -99,11 +99,14 @@ export function MobileProjectSlider() {
               <span className="h-2 w-2 rounded-full bg-white/40" />
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-white">
-              <iframe
-                src={project.url}
-                title={`${project.title} preview`}
-                className="pointer-events-none absolute left-0 top-0 h-[455%] w-[455%] origin-top-left scale-[0.22] border-0"
+              <Image
+                src={`https://image.thum.io/get/width/1280/crop/800/${project.url}`}
+                alt={`${project.title} preview`}
+                fill
+                sizes="100vw"
+                className="object-cover"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>

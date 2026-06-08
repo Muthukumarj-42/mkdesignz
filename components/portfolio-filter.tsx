@@ -148,11 +148,14 @@ export function PortfolioFilter() {
                       <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
                     </div>
                     <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-white transition duration-500 group-hover:scale-[1.02]">
-                      <iframe
-                        src={item.url}
-                        title={`${item.title} website preview`}
-                        className="pointer-events-none absolute left-0 top-0 h-[455%] w-[455%] origin-top-left scale-[0.22] border-0 sm:h-[500%] sm:w-[500%] sm:scale-[0.2] lg:h-[555%] lg:w-[555%] lg:scale-[0.18]"
+                      <Image
+                        src={`https://image.thum.io/get/width/1280/crop/800/${item.url}`}
+                        alt={`${item.title} website preview`}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
                         loading="lazy"
+                        unoptimized
                       />
                     </div>
                   </div>
